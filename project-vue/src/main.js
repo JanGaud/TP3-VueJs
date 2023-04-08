@@ -3,5 +3,6 @@ import App from './App.vue'
 import router from './router'
 import 'bootstrap'
 import '@/assets/css/styles.css'
+import '@/assets/css/header.css'
 
 createApp(App).use(router).mount('#app')
