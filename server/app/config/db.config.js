@@ -2,7 +2,7 @@ module.exports = {
     HOST: 'localhost',
     USER: 'root',
     PASSWORD: '',
-    DB: 'db_product',
+    DB: 'tp_vue',
     dialect: 'mysql',
     PORT: '3306'
 }
