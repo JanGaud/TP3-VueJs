@@ -41,8 +41,8 @@
   <div class="container h-100">
     <div class="d-flex h-100 text-center align-items-center">
       <div class="w-100 text-white">
-        <h1 class="display-3">Video Header</h1>
-        <p class="lead mb-0">Using HTML5 Video and Bootstrap</p>
+        <h1 class="display-3">MusicTech</h1>
+        <p class="lead mb-0">La musique est notre langage universel </p>
       </div>
     </div>
   </div>
