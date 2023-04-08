@@ -1,5 +1,5 @@
-nav {
-    background-color: #1818189e;
+.navbar {
+    background-color: #18181865 !important;
     color: #ffffff;
     font-size: 1.5em;
     font-weight: bold;

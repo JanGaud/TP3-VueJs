@@ -1,6 +1,6 @@
 <template>
         <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
             <div class="container px-4 px-lg-5">
                 <a class="navbar-brand" href="#">My Store</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
@@ -42,7 +42,7 @@
     <div class="d-flex h-100 text-center align-items-center">
       <div class="w-100 text-white">
         <h1 class="display-3">MusicTech</h1>
-        <p class="lead mb-0">La musique est notre langage universel </p>
+        <p class="lead mb-0">La musique est notre langage universel</p>
       </div>
     </div>
   </div>
