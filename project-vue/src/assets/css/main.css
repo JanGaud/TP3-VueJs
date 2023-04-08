@@ -1,12 +1,12 @@
 .navbar {
-    background-color: #18181865 !important;
+    background-color: #181818cb;
     color: #ffffff;
     font-size: 1.5em;
-    font-weight: bold;
     padding: 10px;
     text-align: center;
 }
 
 body {
     background-color: black;
+    color: whitesmoke;
 }
