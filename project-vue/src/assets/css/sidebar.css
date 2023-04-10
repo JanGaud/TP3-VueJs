@@ -1,0 +1,13 @@
+.thumbnail{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    overflow: hidden;
+    object-position: center;
+}
+
+.thumbnail img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}

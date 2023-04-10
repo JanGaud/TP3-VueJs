@@ -1,0 +1,13 @@
+.show-thumbnail{
+    width: 400px;
+    height: auto;
+    object-fit: cover;
+    overflow: hidden;
+    object-position: center;
+}
+
+.show-thumbnail img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}

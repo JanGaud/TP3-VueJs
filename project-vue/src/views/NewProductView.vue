@@ -80,10 +80,10 @@
                       required
                     >
                       <option value="">Select</option>
-                      <option value="Burguer">Burguer</option>
-                      <option value="Italian">Italian</option>
-                      <option value="Indian">Indian</option>
-                      <option value="Thai">Thai</option>
+                      <option value="DJ">DJ</option>
+                      <option value="Producteur">Producteur</option>
+                      <option value="Systeme de son">Systeme de son</option>
+                      <option value="Écouteur">Écouteur</option>
                     </select>
                     <div class="invalid-feedback">
                       Chemin valide de l'image est recquis
