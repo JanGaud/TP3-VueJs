@@ -1,38 +1,33 @@
 <template>
-    <div class="product-add">
-      <!-- Section-->
-      <section class="py-5">
-        <div class="container px-4 px-lg-5 mt-5">
-          <div
-            class="
-              row
-              gx-4 gx-lg-5
-              row-cols-2 row-cols-md-3 row-cols-xl-2
-              justify-content-center
-            "
-          >
-            <div class="col-sm-12">
-              <h4 class="mb-3">Add new product</h4>
-              <div class="needs-validation" novalidate>
-                <div class="row g-2">
-                  <div v-if="!submitted">
+  <div class="product-add">
+    <!-- Section-->
+    <section class="py-5">
+      <div class="container px-4 px-lg-5 mt-5">
+        <div
+          class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-2 justify-content-center"
+        >
+          <div class="col-sm-12">
+            <h4 class="mb-3">Ajouter un produit</h4>
+            <div class="needs-validation" novalidate>
+              <div class="row g-2">
+                <div v-if="!submitted">
                   <div class="col-12">
                     <label for="productName" class="form-label"
-                      >Product Name</label
+                      >Nom du produit</label
                     >
                     <input
                       type="text"
                       class="form-control"
                       id="productName"
                       placeholder=""
-                      v-model = "product.name"
+                      v-model="product.name"
                       required
                     />
-                    <div class="invalid-feedback">Valid name is required.</div>
+                    <div class="invalid-feedback">Un nom valide est recquis</div>
                   </div>
                   <div class="col-12">
                     <label for="productPhoto" class="form-label"
-                      >Product Photo</label
+                      >Image du produit</label
                     >
                     <input
                       type="text"
@@ -43,11 +38,11 @@
                       required
                     />
                     <div class="invalid-feedback">
-                      Valid photo path is required.
+                      Chemin de l'image valide est recquis
                     </div>
                   </div>
                   <div class="col-12">
-                    <label for="productPrice" class="form-label">Price</label>
+                    <label for="productPrice" class="form-label">Prix</label>
                     <div class="input-group has-validation">
                       <span class="input-group-text">CAD</span>
                       <input
@@ -58,12 +53,12 @@
                         v-model.number="product.price"
                         required
                       />
-                      <div class="invalid-feedback">Price is required.</div>
+                      <div class="invalid-feedback">Un prix est recquis</div>
                     </div>
                   </div>
                   <div class="col-12">
                     <label for="productDescription" class="form-label"
-                      >Product Description</label
+                      >description du produit</label
                     >
                     <textarea
                       class="form-control"
@@ -71,11 +66,11 @@
                       placeholder=""
                       v-model="product.description"
                     ></textarea>
-                    <div class="invalid-feedback">Valid description</div>
+                    <div class="invalid-feedback">Description valide</div>
                   </div>
                   <div class="col-12">
                     <label for="productType" class="form-label"
-                      >Product Type</label
+                      >Type de produit</label
                     >
                     <select
                       class="form-control"
@@ -91,29 +86,50 @@
                       <option value="Thai">Thai</option>
                     </select>
                     <div class="invalid-feedback">
-                      Valid photo path is required.
+                      Chemin valide de l'image est recquis
                     </div>
                   </div>
-                  <button class="w-100 btn btn-secondary btn-lg mt-3" type="button" @click="saveProduct">Save </button>
-                  </div>
-                  <div v-else>
-                    <div  class="alert alert-success alert-dismissible fade show" role="alert">
-                    <strong> You submitted successfully!</strong>
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
-                    <button class="w-100 btn btn-success btn-lg mt-3" type="button" @click="newProduct">New product </button>
-                  </div>
-                  <hr class="my-4">
+                  <button
+                    class="w-100 btn btn-secondary btn-lg mt-3"
+                    type="button"
+                    @click="saveProduct"
+                  >
+                    Save
+                  </button>
                 </div>
+                <div v-else>
+                  <div
+                    class="alert alert-success alert-dismissible fade show"
+                    role="alert"
+                  >
+                    <strong> Votre produit est bien ajouté</strong>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="alert"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <button
+                    class="w-100 btn btn-success btn-lg mt-3"
+                    type="button"
+                    @click="newProduct"
+                  >
+                    Nouveau produit
+                  </button>
+                </div>
+                <hr class="my-4" />
               </div>
             </div>
           </div>
         </div>
-      </section>
-    </div>
-  </template>
+      </div>
+    </section>
+  </div>
+</template>
 
 <script>
+import ProductDataService from '../services/ProductDataService.js'
 export default {
   props: ['addInv'],
   data () {
@@ -129,11 +145,15 @@ export default {
     }
   },
   methods: {
-    saveProduct () {
-      this.addInv(this.product)
-      this.submitted = true
-      this.$router.push({ name: 'home' })
-      // console.log(this.submitted)
+    async saveProduct () {
+      try {
+        const response = await ProductDataService.create(this.product)
+        this.addInv(response.data)
+        this.submitted = true
+        this.$router.push({ name: 'home' })
+      } catch (err) {
+        console.log(err)
+      }
     },
     newProduct () {
       this.submitted = false
