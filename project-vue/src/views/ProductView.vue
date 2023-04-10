@@ -34,13 +34,11 @@
                 <i class="bi-cart-fill me-1"></i>
                 Add to cart
               </button>
-              <button
+              <router-link
                 class="btn btn-outline-primary"
-                type="button"
-                @click="modifyProduct"
+                :to="'/update-product/' + product.id"
+                >Modifier</router-link
               >
-                Modifier
-              </button>
               <button
                 class="btn btn-outline-danger"
                 type="button"

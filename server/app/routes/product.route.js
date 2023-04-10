@@ -8,5 +8,7 @@ module.exports = app => {
 
     router.delete('/:id', product.myDelete)
 
+    router.put('/:id', product.myUpdate)
+
     app.use('/api/product', router)
 }
