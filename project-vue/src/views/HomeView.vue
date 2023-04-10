@@ -22,7 +22,7 @@
                                     <input class="form-control qt" type="number" v-model.number="product.quantity"/>
                                     <a class="btn btn-outline-light mt-auto" @click="addTo(product.name, i)">Add to the cart</a>
                                     <p>
-                                        <router-link :to="{name: 'product', params: {id: product.name}}">See more...</router-link>
+                                        <router-link :to="{name: 'product', params: {id: product.name}}">Voir plus</router-link>
                                     </p>
                                 </div>
                             </div>

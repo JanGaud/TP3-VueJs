@@ -40,7 +40,7 @@ const routes = [
   },
   {
     path: '/update-product/:id',
-    name: '/update-product',
+    name: 'update-product',
     component: ProductUpdateView
   }
 ]
