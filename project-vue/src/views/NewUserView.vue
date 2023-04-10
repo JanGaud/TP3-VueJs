@@ -1,5 +1,5 @@
 <template>
-<form @submit.prevent="handleSubmit">
+  <form @submit.prevent="handleSubmit">
     <div class="container">
       <div class="row justify-content-center mt-5">
         <div class="col-md-6">
@@ -35,7 +35,6 @@
           <button
             class="w-100 btn btn-secondary btn-lg mt-3"
             type="submit"
-            @click="saveUser"
           >
             Sauvegarder
           </button>
@@ -47,7 +46,7 @@
 </template>
 
 <script>
-import axios from 'axios'
+import UserDataService from '../services/UserDataService'
 
 export default {
   data () {
@@ -56,13 +55,14 @@ export default {
         email: '',
         name: '',
         password: ''
-      }
+      },
+      message: ''
     }
   },
   methods: {
     async handleSubmit () {
       try {
-        const response = await axios.post('/api/user', this.user)
+        const response = await UserDataService.create(this.user)
         console.log(response.data)
         // Redirect to a success page or show a success message
       } catch (error) {
